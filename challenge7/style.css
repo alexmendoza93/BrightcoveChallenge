@@ -1,0 +1,67 @@
+body {
+    background-color: #111;
+    color: #fff;
+  }
+  /*
+   * Styles essential to the sample
+   * are below
+   */
+  /* position the div which contains the video still image and the lightbox player */
+  .player-block {
+    position: relative;
+  }
+  /* styles for the lightbox player, including transitions to show and hide */
+  #playerLightbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin-left: 0;
+    color: white;
+    text-align: center;
+    background-color: #333;
+    border-radius: 5px;
+    z-index: 20;
+    overflow: hidden;
+    -webkit-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    -moz-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    -ms-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    -o-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /* easeInOutQuad */
+  }
+  /* show the player */
+  .playerShow {
+    width: 530px;
+    height: 350px;
+    padding: 10px;
+    -webkit-box-shadow: 5px 5px 5px 5px rgba(151, 151, 151, .7);
+    box-shadow: 5px 5px 5px 5px rgba(151, 151, 151, .7);
+  }
+  /* hide the player */
+  .playerHide {
+    width: 0;
+    height: 0;
+    padding: 0;
+  }
+  /* style the close button for the lightbox player */
+  .playerClose {
+    text-align: right;
+    margin-top: 5px;
+    text-decoration: underline;
+    color: #63A7CE;
+    width: 90%;
+    cursor: pointer;
+  }
+  
+  /* style the video poster image */
+  #container {
+    position: relative;
+    background-color: #090909;
+    width: 320px;
+    height: 180px;
+    padding: 0px;
+    border: 1px #999 solid;
+    border-radius: 5px;
+    cursor: pointer;
+  }

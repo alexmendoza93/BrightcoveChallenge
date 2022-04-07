@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Brightcove Player</title>
+  <style>
+    .video-js {
+      width: 720px;
+      height: 480px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Brightcove Player </h1>
+  <div style="position: relative; display: block; max-width: 100%;">
+    <div style="padding-top: 56.25%;">
+      <video-js id="mdtPlayer" data-account="6045682556001" data-player="ha0D9LcEd" data-embed="default" controls
+        data-video-id="6054419564001" data-playlist-id="" data-application-id="" 
+        style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;">
+      </video-js>
+
+      <script src="https://players.brightcove.net/6045682556001/ha0D9LcEd_default/index.js"></script>
+
+      <script type="text/javascript">
+
+        videojs.log.level('all');
+        var myPlayer = videojs("mdtPlayer");
+
+        myPlayer.playsinline(true);
+        myPlayer.autoplay('muted');
+
+        myPlayer.ready(function () {
+          mdtPlayer = this;
+          mdtPlayer.on(["suspend", "timeupdate", "waiting", "progress", "abort", "error", "emptied", "stalled", "loadedmetadata", "loadeddata", "canplay", "canplaythrough", "playing", "waiting", "seeking", "seeked", "ended", "durationchange", "play", "pause", "ratechange", "resize", "volumechange", "modalclose"], function (event) {
+            console.log("MDT Player: " + event.type);
+          });
+        });
+
+      </script>
+</body>
+
+</html>
