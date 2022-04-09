@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "c4c32ea9-2615-483c-9d17-233a30bc1682",
+		"name": "BrightcoveAPICall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AccessToken",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic NjZhYmVhNmQtNDU4ZS00NDdlLTg4NjYtNGExMTliZDMwNGVmOnJHcWxkalE5WWxzWHVCeHpyeDFoRUZkV0tac3NLTzVDbWRmY2hpUmdBUDdCam5VUTBZNjEwTnRsRE5GejFEM2hNUmxsSHl2TElfeVZwZzFfT3l2amF3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://oauth.brightcove.com/v4/access_token?grant_type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"oauth",
+						"brightcove",
+						"com"
+					],
+					"path": [
+						"v4",
+						"access_token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetVideos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer AM8onx2TKGut5CSPwTrumgRzpSLixmnkU3ASbpzoEB4s95ov2w0XbgtyJ5TZiPU0UD35OZYmGz_37EZNjQXX6q9efUug6-sH02r721zLreS6D9OuFzR0imlFHMVCuNgpIh0YP3bptjwsRuTyymnh-BRpzHoVF7gR3f1jGeRyYaRiUIcZ0oZ3pJO2x1TDB8U6GpWeQaLq4KtkkhF4H9ntqqlWYP1uOkSv93oF02oIv2NfMSmV14CF-TDJMHiCrjJWZjOi1yqhWlkulIWxUYF1RR7cuExaE8POXHhl5XhhFbwEs11cWjQEAlD7zya1YUgR6LyfcJREtFDzqCYe6Y2GtnjoKROeGi55L5t7qTfO87IpmOASfRmjfVfNGabJuZ8xG4OQRuya5pgKr8VNrb431vUl7WWTmb0aCXVs8St5Kkr0WrB74hTZk0giSrtxG8nuFFL_dJ5vn-cOk-1oUULZ1Z_qHCrAhGT6sofKimLm-P167BPsBDmRxv-yMmLUd1-M45HZEIxgp03crjJhvwJXMypkIVD_hesB2RwMJfJ6o5S-fPGrk6309bzPlKLqND1hxSzskd23PwTFkyL_plm3Xcz9GqsHUYj0_BznJdaYXLbF4mJsMJxS2CMJHHHRLtYPdIBDtW7ID33IRTAZIz9rK1vfICHjVGedxrCjnp6y7ANztJshckldZ9R81Vgfw0cITnGpo79O6tJY0Qq5JJBM-chgi_HwVVP9_cchgJhQ8q-xn7sa_Ve1Bkg3dGyfqaQ0iZvYnut2qW0XFq3Wj9Mjg3xTGVFUp_Fd0Q1tcFzmbaURAbqM6pge98Qr5Z2KkEqPyLSqe-596LA4hX9SgAoTB7p9GNWRAJTe5iQ8cbD1IbF9kgmjFSLuMoUknkRAtIdho6SWYXGLE3u7QBGMzneCpjmxlRnoDUqDbqiDw64WIGXWsDdrhONSgQHuggd5JI0eUfZjWG_La7dzoOaYs5xsA3kG66TzLNw9lmvOVMfLmQwcw7fdzPAQl2I1hheX-cnHI6bmYkSyX5LK",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cms.api.brightcove.com/v1/accounts/6302597822001/videos",
+					"protocol": "https",
+					"host": [
+						"cms",
+						"api",
+						"brightcove",
+						"com"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"6302597822001",
+						"videos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

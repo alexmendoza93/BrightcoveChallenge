@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "7c744fb6-7fcc-4637-ab65-9c1bdcde1c2a",
+		"name": "DynamicIngestVideo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AuthenticationDIAPI",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BC_TOKEN AEnTxTjAfan3gV4YJeBGxx5js14T61lDBX_eLyKcUCR3OQWBUbGwJ1oODFD4FTu43fOS3W-DMAGOg2yLUvvvtObxubGDNfSCIhkYZavOVIpe6NZcvbWSd8A",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \"type\": \"credential\",\r\n      \"maximum_scope\": [\r\n      {\r\n        \"identity\": {\r\n          \"type\": \"video-cloud-account\",\r\n          \"account-id\": 6302597822001\r\n        },\r\n        \"operations\": [\r\n          \"video-cloud/upload-urls/read\",\r\n          \"video-cloud/video/create\",\r\n          \"video-cloud/video/read\",\r\n          \"video-cloud/video/update\",\r\n          \"video-cloud/ingest-profiles/profile/write\",\r\n          \"video-cloud/ingest-profiles/account/write\",\r\n          \"video-cloud/ingest-profiles/profile/read\",\r\n          \"video-cloud/ingest-profiles/account/read\"\r\n        ]\r\n      }\r\n      ],\r\n      \"name\": \"Challenge Brightcove\"\r\n      }"
+				},
+				"url": {
+					"raw": "https://oauth.brightcove.com/v4/client_credentials",
+					"protocol": "https",
+					"host": [
+						"oauth",
+						"brightcove",
+						"com"
+					],
+					"path": [
+						"v4",
+						"client_credentials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateVideo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "AAOTZGZbri_MLHYoH1glQ8tJPxnKpNHHGIMZfAujiWJUSKf4DICavsQ59zsequVJ_4t8Z9Ly4Ho6o7jsENj1OnrEEqFsRxYarUxaM5-jweFfrOeL49UCNF-aEQbveMjYKsSyu3q9q_Z6R9mosK16h54Nz3FYkYTJEYp0ZVzc7p1o-0Je6r-TLely7i_qq5J_F9D2_dPl66bKwgC_WueJL2Il142Bxfr18ho4wk-TyfMjOxUj1-IkNvlgj0xIP5XtTe8hCheK0qcDeYBDOdMPdjix3qTA1DwBRZdUSFGLS2WIdC6xq7nKITdFHms2a34Dzxa-KAp2NoDqHooLT89jJ2nY4wlRQlfpg0GaLjqHEPAJQT1dmKCLuyCDWMo6aYU844UQuYhLqsxn_-0A3hLnJw9VR0gJlQ5KtXG7dIulcA5xQpg8K3wIRHcpj-dtfwNqjfTUcJVTvrUbcudYFZ2kNJ7oLc0GbrThQoGa6g6SZJ9YyMHMBOU0_eKEJ32W5BI_AcNr8vyrWBylbRMNuFXia1UuhgFhRA361xsg-s09aqUn3cJgbDNj85sUILfMfGb2nPKzDoJzEqi9HT6N-BNWFwKe-pDTpEOaRxHs_Y2fadXMFfDC-KH99n4P8LoiI0b-UeheUezfmdQLKRKCfMzuYy5L2rhfP3PcBlSVuTB0TwCeL3qy9su9-GUbfJdnXysSLjx7EDYLzOq6VqAD-BoKerTh3dA0bo0RYyj4XBNUkR7BrW4ExyoPhK59fiw342hNNQDq7m-DlJkqdLVM_Kr7NLoieUKhs-r-4jkG6qbZipSiDsLkZayaI8qNhlCU64ILw5tqVUqZIoKDkWVh038xVhIVJ0T2-mwmTp93NDUrN59LbUp3ipBqy0IKh8D287wi93Ujh3R6OYlQAw8b-tjYNZ0sRGMIM-S15h0NYxYkdB-Riz2sR0tA6zBFJuc6cUxvPj8A9wNY50UY3IM-LMDGDJMZLjAPw8-SVrHUIbH7pU3iPpohVWMKprLUY4c-RUg14CQuEUzk5vwl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cue_points\": [\r\n    {\r\n      \"metadata\": \"string\",\r\n      \"name\": \"string\",\r\n      \"time\": 10.527,\r\n      \"type\": \"AD\"\r\n    }\r\n  ],\r\n  \"description\": \"I am the best\",\r\n  \"drm_disabled\": true,\r\n  \"economics\": \"AD_SUPPORTED\",\r\n  \"geo\": {\r\n    \"countries\": [\r\n      \"us\",\r\n      \"ca\",\r\n      \"mx\"\r\n    ],\r\n    \"exclude_countries\": true,\r\n    \"restricted\": true\r\n  },\r\n  \"long_description\": \"on april 8 doing the brightcove challenge\",\r\n  \"name\": \"MyFirstDIVideo\",\r\n  \"reference_id\": \"Happy Alex on 2022_04_08\",\r\n  \"schedule\": {\r\n    \"ends_at\": \"2030-05-20T20:41:07.689Z\",\r\n    \"starts_at\": \"2020-05-20T20:41:07.689Z\"\r\n  },\r\n  \"state\": \"ACTIVE\",\r\n  \"tags\": [\r\n    \"Programmer\",\r\n    \"brightcove\"\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://cms.api.brightcove.com/v1/accounts/6302597822001/videos",
+					"protocol": "https",
+					"host": [
+						"cms",
+						"api",
+						"brightcove",
+						"com"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"6302597822001",
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CMS API request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "AGAY4E4zkRFxbpSR9jo7TGroD8erggTBRJpdxBZtBasd2VdABX6ebx8Opm-B9zUTww2QHFB2XrVudq48WnQh_LBtwjnaZbSGh70y25Q81tV8eyHftz66WgVIJAXcTTBtCuJHFLGlWaZTnej4MMWVPAuvs8Hu7v9gOvmbE6MT64vu7NDGWZKTK-zDAeV-eEpIpoKo2lp_-VRPQligvH6Vs-D97uKeqcfQUpckDZFYMMiuaAhHvY29dw4QVQEAUnKGyoJxeY1vxRBlOHDrOAMexrbGh0_bQqxiwk9X26lwkTrO-lns6kn0khrs5ZEDiEWia__lW7_SqLhDdPmL_dCYIOmeRCnDpn70XHQCQTKqYuIuD25QeC0ij0rte-DSlDHwdJVxoSeO5Nqvi7eTW3gb2puwSSDtuv3TVDsIQZdRY2uz3TBjMTS1SE6sqjZDBUrzhoGkPDh_3BFkXQoBu49RyISGzhny-zeqlXJPT-UcvJfwHl0IHn6FBvLuqUdhF15-FeufQqBJb7kzOIEr7UDuk-6lD7yAsWA4i19358b45AMSY6yqEcc0u478khKNuYVeVa160RvfzT2TNcOwVz4IoYtXcDEdXRf80peEYpl37ioAgicL7qcLnAQlaO--Xo2Jg_tkQCJDYjvTLFTlVTzZqxQICcz8FHZ2M4MbFJSqxO5zuZMuWipOutjyg5B-cIuWhUTW2Le62hP-j-W3-fw594BWyKSzXrbIeMFqyPQRYl5n3t6pMo5hK1v9Ss8-f6YW-xxPwRRPRd7vuOrhKR8P7-01cswxrb4Uj3CUfeNy7t2R7cQnmckv97J49nBUPou_y9vzUNpT16ls7Zo281yOtU4uMyAYWO2dEAyMu2EVTWDFO-zKlsHuA35A4sPDzIQbPXbLuEFBZ23fzjGUmtO9kZK2KItaHwHvIyxK7NrfAsnJuPyqDhGi5hXtPG_TPIqoFGpRODDVFPeUEfeay2GVSAyXmlqz9Surkb-l80bZWu6bdlypH0qCGMzpWmSg5x_DuRSNWdLwmYSL",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"name\": \"myfirstvideodi\"\r\n      }"
+				},
+				"url": {
+					"raw": "https://cms.api.brightcove.com/v1/accounts/6302597822001/videos",
+					"protocol": "https",
+					"host": [
+						"cms",
+						"api",
+						"brightcove",
+						"com"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"6302597822001",
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "S3 URLs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "AGAY4E5hOqArd1QCuRY8968DS345W9l0IwHTi3MaAjQkXVHe76Jhbyy1qxxd21fQzjM_BKLRfdWiI_9jhLIrQhDG96xS9yblC1943pq2okV-XifIqWFT__ne9xLAIeosWNpaQOs6twyh-9BsFnhLsJT9fw7iDW_glFk6_AYYJ6KBIFYQKLuI8gRyfUp5vz_mTweTg6xlPdx4xt8AylaNKwnB1DdVzePz8Qv8YgNTbuDqMSVKAIz1PT_22t9KuCRS3lBkjBhK83i4lkUzldD7ZpHVu6Jgm_63y7hQe9KyLupMLgaYPxIpFc5j_w6_LvzRMYYaL8MYNM9impY0DtA7bw0y4BySW5k6iLTUwRZ4Vifnn4kEAIippsfJLMgTo32zUWtEEFuH84lzj1mZDBQtONxokutcNQhk_8tLoYvrEMKozKf9mfXkOyL3w5R1TxLbiKzTbnlo7B_KNGUtAaThU17x-UjVBwvi3Rtb5ZRX1DSFhaCXvLOb78fU_tUlpLuRREzUeX1ObBtpyLUprTtba9kZ4wefxQthE1MsLBOc7oO3BH3ToFZyjSQNbfyQ7IGq82PzdgzSs9e9NU7Aa5gds9VuXk5kGaVHQ16423ttm5Dyenz2iBugZ3hC-wGRVFipfwAiO-CISoXPfd45to--Nh0HuewsYgl05SD91XUx7gJUDVHA4c7M07Mu03-lgW1QQq6DCpQW_gHptplAtwrEehD1HWnCR_R9EYchKsVhDraBUxbArD84ZoLMCUxXtyNOFxb0LB5_PY6OoMz_uEmA9mr7KezN9ZSw6XceWA55r-26DGliRBqN1VvFNqaQG7gb2Mx4NuGRioORj60s8x_A3xe_IOVDr6M3qBFudcGpY3rwxYZTxHyve-cC-c1iEUIto8gRYfvbxp9r76IPmCZoDZYdWczOCgk9CKtWyZNFbg1i6ljuFsXI-6KBqI73HcBzxuBnLLxMTzZp9cbaNxVLFNXjvmkgsO8W5qtiQMKSmoFjjYcVnf0h0Mc_HYFK6ccBG1qqiLGeCNqa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ingest.api.brightcove.com/v1/accounts/6302597822001/videos/6302979570001/upload-urls/myfirstvideodi",
+					"protocol": "https",
+					"host": [
+						"ingest",
+						"api",
+						"brightcove",
+						"com"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"6302597822001",
+						"videos",
+						"6302979570001",
+						"upload-urls",
+						"myfirstvideodi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uploadvideo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ingestion-upload-production.s3.amazonaws.com/6302597822001/6302979570001/60e7b4b3-e09b-457c-9c81-cec2ab5ba1a0/myfirstvideodi?AWSAccessKeyId=AKIAJZKRHWB4FUFMCPPA&Expires=1649526519&Signature=dIYTxMnLtY6tDojH41F%2BMX9iaJA%3D",
+					"protocol": "https",
+					"host": [
+						"ingestion-upload-production",
+						"s3",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"6302597822001",
+						"6302979570001",
+						"60e7b4b3-e09b-457c-9c81-cec2ab5ba1a0",
+						"myfirstvideodi"
+					],
+					"query": [
+						{
+							"key": "AWSAccessKeyId",
+							"value": "AKIAJZKRHWB4FUFMCPPA"
+						},
+						{
+							"key": "Expires",
+							"value": "1649526519"
+						},
+						{
+							"key": "Signature",
+							"value": "dIYTxMnLtY6tDojH41F%2BMX9iaJA%3D"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DynamicIngestRequest",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "AA-YeU0PMfYnlPL56tC-qbje4HNVvoO0UXJNvC9e1DrqP9FjttAD0kPSq-rLsXbY4amyfxpiM3U1AAjcgAF_YxLnPcK4EX9Ead0cFGxiEAIzSSs19nAvFSbt8RTAOqLJmpeoTtyWgwezez7gbhTcALH36YbIP5yEelgg1Mn_3KWyMCtNawwgFcdS2PbnSDggF4OHJuNK0xsYQkkruKwCZtrsFXZD-HkOqC62cUdoNzxQjSnQJakEcTNOFzQSq7ExOA9yMKtmKbrmdFuphEOT4ApptMEQMuIqP9h4c8MdS_NdZC6zvsuus60oyuj0hVAxYCreZvu7xUxzRB_nWok-eApO3_Sg_xdKhSKWJ6oKndzlohdTP29yVdYSkd-T3YPwD4qoR2rZyb1j_OLxiDdBb6SI3__vje6nBy5Al96D_dx-85UhcaMnbOLhc0zP8iP7aPteOXRitextfQ00EpnwOyQnkT8qL2TjYKp7G4jpU85zC99DX_7slrz4Gg9q7Qr9TRWowoLZjDv2Rlxwr4lHjp-uQ-Jpo13ib5TAikVVKlCJ4nkHLzU-G7I9X65SMRlK5QDHpdCe2MmrzDmfbIPv2WpeiCOueW2lTpeD4U8scmg4OOAVZ8NIO25K1FjStA9biuMJ062re6DfqB9b6UNGvi31NYkKx8F2HvDAVEBkcUPTfJgMgp9hRR7b7hES-JTNe2NTCooScydaHBwMne3Z3KOGDhlxAAwEJvYrUBw6FHyeQQ4rDDnC5JcPmMYQeigittE_gAhElfnOOXUmg1XM-0fQcBhjFlFt7lrzX8Rs81rfZhSir_31L1PFBng9gdrTuq_Ght4rpc67AhcDEX_y0SMvZncydbZnMytOmaajapMCAc8rFBsSOdnMbnWU72q7ZaInpQDwYRk4xZXJfBsV3m4OfYdiO-VAK-Ijr7PLaDuSvMkE6pg2yAWspgfn11yH_R65EvGU_RcDOBmuyQL0vLoUN5ptx8fnIp7vrpGRn7HpBSFhYfWpauvc7g_0WyquGYqwMmKsGCJc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"master\": {\r\n          \"url\": \"https://ingestion-upload-production.s3.amazonaws.com/6302597822001/6302979570001/60e7b4b3-e09b-457c-9c81-cec2ab5ba1a0/myfirstvideodi\"\r\n      },\r\n      \"profile\": \"multi-platform-standard-static\",\r\n      \"capture-images\": true\r\n      }"
+				},
+				"url": {
+					"raw": "https://ingest.api.brightcove.com/v1/accounts/6302597822001/videos/6303367763001/ingest-requests",
+					"protocol": "https",
+					"host": [
+						"ingest",
+						"api",
+						"brightcove",
+						"com"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"6302597822001",
+						"videos",
+						"6303367763001",
+						"ingest-requests"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

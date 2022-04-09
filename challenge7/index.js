@@ -1,3 +1,4 @@
+// Get a reference to the video poster image and the lightbox
 var myPlayer,
     eContainer = document.getElementById("container"),
     eLightbox = document.getElementById("playerLightbox");

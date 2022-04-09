@@ -1,0 +1,37 @@
+/* * The body style is just for the
+ * background color of the codepen.
+ * Do not include in your code.
+ */
+ body {
+    background-color: #111;
+    color: #fff;
+  }
+  /*
+   * Styles essential to the sample
+   * are below
+   */
+  
+  /* Style the overlay */
+  .vjs-overlay {
+    width: 80px;
+    background-color: #000000;
+    color: #fff;
+    text-align: left;
+  }
+
+  /*
+ * Styles essential to the sample
+ * are below
+ */
+#backButton img {
+    margin-top: -7px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+  }
+  #forwardButton img {
+    margin-top: -7px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+  }
